@@ -88,9 +88,10 @@ var dappyGame = {
         angle_animation.start();
     },
     restartGame: function() {
+        this.loseSound.play();
         this.lostText = game.add.text(90,200, "YOU LOSE", {font:"62px Impact", fill:"#fff"});
         game.time.events.add(6000, this.lostGame ,self);
-        this.loseSound.play();
+        
     }
 };
 var game = new Phaser.Game(400, 490);
