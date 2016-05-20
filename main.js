@@ -66,6 +66,7 @@ var dappyGame = {
         game.physics.arcade.overlap(this.dap, this.pipes, this.hitPipe, null, this);
     },
     hitPipe: function() {
+        this.loseSound.play();
         if(this.dap.alive == false) {
             return;
         }
@@ -88,7 +89,7 @@ var dappyGame = {
         angle_animation.start();
     },
     restartGame: function() {
-        this.loseSound.play();
+
         this.lostText = game.add.text(90,200, "YOU LOSE", {font:"62px Impact", fill:"#fff"});
         game.time.events.add(6000, this.lostGame ,self);
         
