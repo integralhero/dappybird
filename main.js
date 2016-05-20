@@ -3,7 +3,6 @@ var dappyGame = {
         game.load.image('dap', 'assets/dap.png');
         game.load.image('pipe', 'assets/pipe.png');
         game.load.audio('jump', 'assets/jump.wav'); 
-        game.load.audio('lose', 'assets/lose.wav'); 
     },
     create: function() { 
         game.stage.backgroundColor = "#71c5cf";
@@ -66,7 +65,6 @@ var dappyGame = {
         game.physics.arcade.overlap(this.dap, this.pipes, this.hitPipe, null, this);
     },
     hitPipe: function() {
-        this.loseSound.play();
         if(this.dap.alive == false) {
             return;
         }
